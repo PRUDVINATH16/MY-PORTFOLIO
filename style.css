@@ -816,5 +816,9 @@ body {
   .cta-button {
     text-align: center;
   }
+
+  .contact-text a{
+    font-size: .68rem;
+  }
 }
 
