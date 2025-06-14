@@ -825,5 +825,9 @@ body {
   #home {
     margin-top: 50px;
   }
+
+  .project-item{
+    padding-bottom: 10px;
+  }
 }
 
