@@ -4,30 +4,30 @@
   --primary-dark: #0a0e1a;
   --primary-medium: #1a1f2e;
   --primary-light: #2a3441;
-  
+
   /* Accent Colors */
   --accent-primary: #6366f1;
   --accent-secondary: #8b5cf6;
   --accent-tertiary: #06b6d4;
-  
+
   /* Gradient Colors */
   --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
   --gradient-dark: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
-  
+
   /* Text Colors */
   --text-primary: #ffffff;
   --text-secondary: #e2e8f0;
   --text-muted: #94a3b8;
   --text-accent: #fbbf24;
-  
+
   /* Background Colors */
   --bg-primary: var(--primary-dark);
   --bg-secondary: var(--primary-medium);
   --bg-tertiary: var(--primary-light);
   --bg-glass: rgba(255, 255, 255, 0.1);
-  
+
   /* Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -35,20 +35,20 @@
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
   --spacing-2xl: 4rem;
-  
+
   /* Border Radius */
   --radius-sm: 0.5rem;
   --radius-md: 1rem;
   --radius-lg: 1.5rem;
   --radius-xl: 2rem;
-  
+
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
-  
+
   /* Transitions */
   --transition-fast: 0.15s ease-in-out;
   --transition-normal: 0.3s ease-in-out;
@@ -221,9 +221,12 @@ body {
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
+
   50% {
     transform: translateY(-20px) rotate(180deg);
   }
@@ -263,17 +266,20 @@ body {
   animation: pulse 2s ease-in-out infinite;
 }
 
-.image-placeholder img{
+.image-placeholder img {
   width: 92%;
   height: 92%;
   border-radius: 50%;
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
     box-shadow: var(--shadow-glow);
   }
+
   50% {
     transform: scale(1.05);
     box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
@@ -289,6 +295,7 @@ body {
     opacity: 0;
     transform: translateX(50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -492,6 +499,7 @@ body {
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(100%);
   }
@@ -524,6 +532,7 @@ body {
   overflow: hidden;
   transition: var(--transition-normal);
   cursor: pointer;
+  padding-bottom: 20px;
 }
 
 .project-item:hover {
@@ -543,13 +552,17 @@ body {
 .project-icon {
   width: 40px;
   height: 40px;
-  background: var(--gradient-primary);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
   color: var(--text-primary);
+}
+
+.project-icon img{
+  width: 100%;
+  height: 90%;
 }
 
 .project-title {
@@ -564,6 +577,10 @@ body {
   transition: var(--transition-normal);
 }
 
+.project-toggle img{
+  width: 20px;
+}
+
 .project-item.active .project-toggle {
   transform: rotate(180deg);
   color: var(--accent-primary);
@@ -574,10 +591,12 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  padding: 20px;
 }
 
 .project-item.active .project-content {
-  max-height: 500px; /* Adjust as needed */
+  max-height: 700px;
+  /* Adjust as needed */
   padding: var(--spacing-md);
 }
 
@@ -615,6 +634,10 @@ body {
 
 .project-actions {
   margin-top: var(--spacing-sm);
+}
+
+.link-img{
+  width: 20px;
 }
 
 .project-btn {
@@ -709,7 +732,6 @@ body {
 .contact-icon {
   width: 50px;
   height: 50px;
-  background: var(--gradient-primary);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -751,43 +773,47 @@ body {
   margin-bottom: var(--spacing-xs);
 }
 
+.phone-img, .mail-img, .whatsapp-img{
+  width: 30px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .nav-menu {
     display: none;
   }
-  
+
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
     gap: var(--spacing-lg);
   }
-  
+
   .title-line {
     font-size: 2.5rem;
   }
-  
+
   .skills-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .contact-content {
     grid-template-columns: 1fr;
   }
-  
+
   .contact-brand {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .brand-symbol {
     font-size: 4rem;
   }
-  
+
   .contact-title {
     font-size: 2rem;
   }
@@ -797,37 +823,32 @@ body {
   .section-container {
     padding: var(--spacing-lg) var(--spacing-xs);
   }
-  
+
   .hero-section {
     padding: var(--spacing-lg) var(--spacing-xs);
   }
-  
+
   .title-line {
     font-size: 2rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .hero-cta {
     flex-direction: column;
   }
-  
+
   .cta-button {
     text-align: center;
   }
 
-  .contact-text a{
+  .contact-text a {
     font-size: .68rem;
   }
 
   #home {
     margin-top: 50px;
   }
-
-  .project-item{
-    padding-bottom: 10px;
-  }
 }
-
