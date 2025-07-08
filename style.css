@@ -672,7 +672,7 @@ body {
 
 .contact-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--spacing-2xl);
   align-items: start;
 }
@@ -712,7 +712,7 @@ body {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
-  padding: var(--spacing-md);
+  padding: .5rem;
   background: rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-md);
   transition: var(--transition-normal);
@@ -1286,6 +1286,7 @@ body {
 
   .contact-content {
     grid-template-columns: 1fr;
+    font-size: .9rem;
   }
 
   .contact-brand {
@@ -1332,6 +1333,10 @@ body {
 
   .section-title {
     font-size: 2rem;
+  }
+
+  .skill-name{
+    font-size: .7rem;
   }
 
   .hero-cta {
@@ -1926,4 +1931,62 @@ body {
 .query-inp:focus {
   outline: 2px solid #8b5cf6;
   outline-offset: 2px;
+}
+
+
+
+
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .skill-category {
+    padding: var(--spacing-md);
+  }
+
+  .skill-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+
+  .skill-name {
+    min-width: unset;
+    width: 100%;
+    text-align: left;
+    font-size: 0.8rem;
+  }
+
+  .skill-bar {
+    width: 100%;
+    height: 6px;
+  }
+
+  .skill-percentage {
+    min-width: unset;
+    width: 100%;
+    text-align: left;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .skills-section .section-container {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .skill-category {
+    padding: var(--spacing-sm);
+  }
+
+  .skill-name {
+    font-size: 0.7rem;
+  }
+
+  .skill-percentage {
+    font-size: 0.6rem;
+  }
 }
