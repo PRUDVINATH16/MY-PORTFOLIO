@@ -5,11 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PRUDVI || PORTFOLIO</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="briefcase.png" type="image/x-icon">
   <script src="https://kit.fontawesome.com/c06f46ad06.js" crossorigin="anonymous"></script>
@@ -32,290 +27,371 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero-section">
-    <div class="hero-background">
-      <div class="floating-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-      </div>
-    </div>
-    <div class="hero-content">
-      <div class="hero-image">
-        <div class="image-wrapper">
-          <div class="image-placeholder">
-            <img src="profile-hd.png" alt="my-profile-photo">
-          </div>
-        </div>
-      </div>
-      <div class="hero-text">
-        <h1 class="hero-title">
-          <span class="title-line">PRUDVINATH</span>
-          <span class="title-subtitle">Web Designer & Developer</span>
-        </h1>
-        <p class="hero-description">
-          Hi, Glad to see you here! <strong>I am a web-designer,</strong><br><br>
-          I love to design and develop websites that are user-friendly and visually appealing.
-          I am passionate about creating and also i make website responsive, with SEO.
-          You can see my skill-set, projects and contact info down below...
-          And also we created a website <strong><a target="_blank"
-              href="https://starterwave.xyz/index.php">StarterWave</a></strong> for
-          freelancing. From this also i learned a lot,
-          and got real time projects which helps to best get hands on experience. 😊
-        </p>
-        <div class="hero-cta">
-          <a href="#projects" class="cta-button primary">View My Work</a>
-          <a href="#contact" class="cta-button secondary">Get In Touch</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- chat bot trigger -->
+  <div class="float-chat-trigger">
+    <h3>ChatBot</h3>
+  </div>
 
-  <!-- Skills Section -->
-  <section id="skills" class="skills-section">
-    <div class="section-container">
-      <h2 class="section-title">MY SKILLSET</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3 class="category-title">FRONT-END</h3>
-          <div class="skills-list">
-            <div class="skill-item">
-              <span class="skill-name">CANVA(DESIGNS)</span>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="90"></div>
-              </div>
-              <span class="skill-percentage">90%</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">HTML, CSS</span>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="99"></div>
-              </div>
-              <span class="skill-percentage">99%</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">JAVASCRIPT</span>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="90"></div>
-              </div>
-              <span class="skill-percentage">90%</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">REACT</span>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="5"></div>
-              </div>
-              <span class="skill-percentage">5%</span>
+  <!-- chat bot UI -->
+  <div class="overlay"></div>
+  <div class="chat-bot-container">
+    <div class="sidebar-overlay"></div>
+    <div class="bot-header">
+      <button class="sidebar-toggle" aria-label="Toggle sidebar menu">☰</button>
+      <div class="bot-img"><img src="profile-hd.png" alt="my-profile-photo"></div>
+      <div class="bot-title">PRUDVI'S BOT</div>
+      <div class="clear-btn"><img src="clear.png" alt="clear-button"></div>
+    </div>
+
+    <aside class="common-doubts-section">
+      <ul>
+        <li onclick="handleQuery('How much did you cost for a website?')">💰 How much did you cost for a website?</li>
+        <li onclick="handleQuery('How can I get started?')">🚀 How can I get started?</li>
+        <li onclick="handleQuery('What kind of projects do you take on?')">🛠️ What kind of projects do you take on?
+        </li>
+        <li onclick="handleQuery('Can you redesign my existing website?')">♻️ Can you redesign my existing website?</li>
+        <li onclick="handleQuery('Send your live projects link?')">🌐 Send your live projects link?</li>
+        <li onclick="handleQuery('What technologies do you use?')">💻 What technologies do you use?</li>
+        <li onclick="handleQuery('Can you integrate APIs or external services?')">🔌 Can you integrate APIs or external
+          services?</li>
+        <li onclick="handleQuery('Will you help me after the project is done?')">🙋‍♂️ Will you help me after the
+          project is done?</li>
+        <li onclick="handleQuery('Is my data safe with you?')">🔐 Is my data safe with you?</li>
+        <li onclick="handleQuery('What did you studied?')">🎓 What did you studied?</li>
+        <li onclick="handleQuery('Your all services list?')">🧾 Your all services list?</li>
+        <li onclick="handleQuery('How much time did you take for completing a project?')">⏳ How much time did you take
+          for completing a project?</li>
+      </ul>
+    </aside>
+
+
+    <div class="result-container">
+      <div class="ai-output">💬 I'm your AI-powered dev assistant!<br>
+        Ask me anything i am here to solve your doubts...</div>
+    </div>
+
+    <div class="input-section">
+      <input type="text" class="query-inp" placeholder="Enter your queries...">
+      <div class="img-con">
+        <img src="up-arrow.png" alt="up-arrow">
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="hero-background">
+        <div class="floating-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+        </div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-image">
+          <div class="image-wrapper">
+            <div class="image-placeholder">
+              <img src="profile-hd.png" alt="my-profile-photo">
             </div>
           </div>
         </div>
-        <div class="skill-category">
-          <h3 class="category-title">BACK-END</h3>
-          <div class="skills-list">
-            <div class="skill-item">
-              <span class="skill-name">PHP</span>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="80"></div>
+        <div class="hero-text">
+          <h1 class="hero-title">
+            <span class="title-line">PRUDVINATH</span>
+            <span class="title-subtitle">Web Designer & Developer</span>
+          </h1>
+          <p class="hero-description">
+            Hi, Glad to see you here! <strong>I am a web-designer,</strong><br><br>
+            I love to design and develop websites that are user-friendly and visually appealing.
+            I am passionate about creating and also i make website responsive, with SEO.
+            You can see my skill-set, projects and contact info down below...
+            And also we created a website <strong><a target="_blank"
+                href="https://starterwave.xyz/index.php">StarterWave</a></strong> for
+            freelancing. From this also i learned a lot,
+            and got real time projects which helps to best get hands on experience. 😊
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="cta-button primary">View My Work</a>
+            <a href="#contact" class="cta-button secondary">Get In Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+      <div class="section-container">
+        <h2 class="section-title">MY SKILLSET</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3 class="category-title">FRONT-END</h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <span class="skill-name">CANVA(DESIGNS)</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="90"></div>
+                </div>
+                <span class="skill-percentage">90%</span>
               </div>
-              <span class="skill-percentage">80%</span>
+              <div class="skill-item">
+                <span class="skill-name">HTML, CSS</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="99"></div>
+                </div>
+                <span class="skill-percentage">99%</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">JAVASCRIPT</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="90"></div>
+                </div>
+                <span class="skill-percentage">90%</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">REACT</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="5"></div>
+                </div>
+                <span class="skill-percentage">5%</span>
+              </div>
             </div>
-            <div class="skill-item">
-              <span class="skill-name">NODE-JS</span>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="30"></div>
+          </div>
+          <div class="skill-category">
+            <h3 class="category-title">BACK-END</h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <span class="skill-name">PHP</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="80"></div>
+                </div>
+                <span class="skill-percentage">80%</span>
               </div>
-              <span class="skill-percentage">30%</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">EXPRESS-JS</span>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="15"></div>
+              <div class="skill-item">
+                <span class="skill-name">NODE-JS</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="30"></div>
+                </div>
+                <span class="skill-percentage">30%</span>
               </div>
-              <span class="skill-percentage">15%</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">SQL, MONGO-DB</span>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="60"></div>
+              <div class="skill-item">
+                <span class="skill-name">EXPRESS-JS</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="15"></div>
+                </div>
+                <span class="skill-percentage">15%</span>
               </div>
-              <span class="skill-percentage">60%</span>
+              <div class="skill-item">
+                <span class="skill-name">SQL, MONGO-DB</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="60"></div>
+                </div>
+                <span class="skill-percentage">60%</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects-section">
-    <div class="section-container">
-      <h2 class="section-title">FEATURED PROJECTS</h2>
-      <div class="projects-list">
-        <div class="project-item">
-          <div class="project-header">
-            <div class="project-icon">
-              <!-- <i class="fas fa-pills"></i> -->
-              <img src="logo1.png" alt="citrix-pvt-ltd-logo">
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+      <div class="section-container">
+        <h2 class="section-title">FEATURED PROJECTS</h2>
+        <div class="projects-list">
+          <div class="project-item">
+            <div class="project-header">
+              <div class="project-icon">
+                <!-- <i class="fas fa-pills"></i> -->
+                <img src="logo1.png" alt="citrix-pvt-ltd-logo">
+              </div>
+              <h3 class="project-title">CITRIX-LTD</h3>
+              <div class="project-toggle">
+                <!-- <i class="fas fa-chevron-down"></i> -->
+                <img src="down-arrow.png" alt="down-arrow-symbol">
+              </div>
             </div>
-            <h3 class="project-title">CITRIX-LTD</h3>
-            <div class="project-toggle">
-              <!-- <i class="fas fa-chevron-down"></i> -->
-              <img src="down-arrow.png" alt="down-arrow-symbol">
+            <div class="project-content">
+              <p class="project-description">
+                It is Pharma Company Website done by our team with very curious.
+                That too this our first project we gain main knowledge from this project.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">PHP</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://citrixltd.com/" target="_blank" class="project-btn">
+                  <!-- <i class="fas fa-external-link-alt"></i> -->
+                  <img src="external-link.png" alt="link-symbol" class="link-img">
+                  View Site
+                </a>
+              </div>
             </div>
           </div>
-          <div class="project-content">
-            <p class="project-description">
-              It is Pharma Company Website done by our team with very curious.
-              That too this our first project we gain main knowledge from this project.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">PHP</span>
+
+          <div class="project-item">
+            <div class="project-header">
+              <div class="project-icon">
+                <!-- <i class="fas fa-rocket"></i> -->
+                <img src="logo2.png" alt="starterwave-logo">
+              </div>
+              <h3 class="project-title">STARTERWAVE</h3>
+              <div class="project-toggle">
+                <!-- <i class="fas fa-chevron-down"></i> -->
+                <img src="down-arrow.png" alt="down-arrow-symbol">
+              </div>
             </div>
-            <div class="project-actions">
-              <a href="https://citrixltd.com/" target="_blank" class="project-btn">
-                <!-- <i class="fas fa-external-link-alt"></i> -->
-                <img src="external-link.png" alt="link-symbol" class="link-img">
-                View Site
+            <div class="project-content">
+              <p class="project-description">
+                It is our Web agency - StarterWave.
+                Our team is highly dedicated and performs tasks efficiently when it is for company.
+                We built websites with responsive and SEO.
+                We are very collaborative with the Clients and provides client favorable websites.
+                StarterWave - Let\"s Rise Together...!
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">PHP</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://starterwave.xyz" target="_blank" class="project-btn">
+                  <!-- <i class="fas fa-external-link-alt"></i> -->
+                  <img src="external-link.png" alt="link-symbol" class="link-img"> View Site
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <div class="project-header">
+              <div class="project-icon">
+                <!-- <i class="fas fa-brain"></i> -->
+                <img src="logo3.png" alt="review-converter-logo">
+              </div>
+              <h3 class="project-title">Review-converter (AI - Powered)</h3>
+              <div class="project-toggle">
+                <!-- <i class="fas fa-chevron-down"></i> -->
+                <img src="down-arrow.png" alt="down-arrow-symbol">
+              </div>
+            </div>
+            <div class="project-content">
+              <p class="project-description">
+                Review Converter is a smart, AI-powered web app that translates and summarizes movie reviews in regional
+                languages — all in real time. Built with LangChain, Gemini LLMs, and
+                Node.js, it provides an interactive UI and clean user experience.
+              </p>
+              <div class="project-features">
+                <div class="feature">🌐 Translates reviews to 5+ Indian languages</div>
+                <div class="feature">✂️ Summarizes the review using Gemini\"s LLMs</div>
+                <div class="feature">⚡ Real-time fetch using REST API</div>
+                <div class="feature">🎛️ Smooth UI with language selector & loader</div>
+                <div class="feature">🚀 Fully deployed & live on Render</div>
+              </div>
+              <div class="project-tech">
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">LangChain</span>
+                <span class="tech-tag">Gemini AI</span>
+                <span class="tech-tag">REST API</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://review-converter.onrender.com/index.html" target="_blank" class="project-btn">
+                  <!-- <i class="fas fa-external-link-alt"></i> -->
+                  <img src="external-link.png" alt="link-symbol" class="link-img">View Site
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact form -->
+    <section id="contact-form">
+      <h2 class="form-heading">Hire Me Before GOOGLE does...</h2>
+      <div class="contact-form">
+        <div class="input-group inp">
+          <input type="text" placeholder="Name" required class="input-name">
+        </div>
+        <div class="input-group inp">
+          <input type="tel" placeholder="Mobile" required class="input-mobile">
+        </div>
+        <div class="input-group inp">
+          <input type="text" placeholder="Project Name" required class="input-project-name">
+        </div>
+        <div class="input-group">
+          <textarea cols="150" rows="10" placeholder="Small description about your project" required
+            class="input-project-description"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">
+          <span class="btn-text">Send Message</span>
+          <span class="btn-icon">→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="section-container">
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-brand">
+              <div class="brand-symbol">@</div>
+              <h2 class="contact-title">LET\"S CONNECT</h2>
+            </div>
+            <div class="contact-details">
+              <a href="tel:+919398927019" class="contact-item-link">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <img src="phone.png" alt="phone-symbol" class="phone-img">
+                  </div>
+                  <div class="contact-text">
+                    +91 9398927019
+                  </div>
+                </div>
+              </a>
+
+              <a href="mailto:patnamprudvinath2006@gmail.com" class="contact-item-link">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <img src="mail.png" alt="mail-symbol" class="mail-img">
+                  </div>
+                  <div class="contact-text">
+                    patnamprudvinath2006@gmail.com
+                  </div>
+                </div>
+              </a>
+
+              <a href="https://wa.me/9398927019?text=Hi%20I%20just%20visited%20your%20portfolio"
+                class="contact-item-link" target="_blank">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <img src="whatsapp.png" alt="whats-app-symbol" class="whatsapp-img">
+                  </div>
+                  <div class="contact-text">
+                    Chat with me
+                  </div>
+                </div>
               </a>
             </div>
-          </div>
-        </div>
 
-        <div class="project-item">
-          <div class="project-header">
-            <div class="project-icon">
-              <!-- <i class="fas fa-rocket"></i> -->
-              <img src="logo2.png" alt="starterwave-logo">
-            </div>
-            <h3 class="project-title">STARTERWAVE</h3>
-            <div class="project-toggle">
-              <!-- <i class="fas fa-chevron-down"></i> -->
-              <img src="down-arrow.png" alt="down-arrow-symbol">
-            </div>
           </div>
-          <div class="project-content">
-            <p class="project-description">
-              It is our Web agency - StarterWave.
-              Our team is highly dedicated and performs tasks efficiently when it is for company.
-              We built websites with responsive and SEO.
-              We are very collaborative with the Clients and provides client favorable websites.
-              StarterWave - Let\"s Rise Together...!
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">PHP</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://starterwave.xyz" target="_blank" class="project-btn">
-                <!-- <i class="fas fa-external-link-alt"></i> -->
-                <img src="external-link.png" alt="link-symbol" class="link-img"> View Site
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <div class="project-item">
-          <div class="project-header">
-            <div class="project-icon">
-              <!-- <i class="fas fa-brain"></i> -->
-              <img src="logo3.png" alt="review-converter-logo">
-            </div>
-            <h3 class="project-title">Review-converter (AI - Powered)</h3>
-            <div class="project-toggle">
-              <!-- <i class="fas fa-chevron-down"></i> -->
-              <img src="down-arrow.png" alt="down-arrow-symbol">
-            </div>
-          </div>
-          <div class="project-content">
-            <p class="project-description">
-              Review Converter is a smart, AI-powered web app that translates and summarizes movie reviews in regional
-              languages — all in real time. Built with LangChain, Gemini LLMs, and
-              Node.js, it provides an interactive UI and clean user experience.
-            </p>
-            <div class="project-features">
-              <div class="feature">🌐 Translates reviews to 5+ Indian languages</div>
-              <div class="feature">✂️ Summarizes the review using Gemini\"s LLMs</div>
-              <div class="feature">⚡ Real-time fetch using REST API</div>
-              <div class="feature">🎛️ Smooth UI with language selector & loader</div>
-              <div class="feature">🚀 Fully deployed & live on Render</div>
-            </div>
-            <div class="project-tech">
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">LangChain</span>
-              <span class="tech-tag">Gemini AI</span>
-              <span class="tech-tag">REST API</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://review-converter.onrender.com/index.html" target="_blank" class="project-btn">
-                <!-- <i class="fas fa-external-link-alt"></i> -->
-                <img src="external-link.png" alt="link-symbol" class="link-img">View Site
-              </a>
+          <div class="location-info">
+            <h3 class="location-title">LOCATION</h3>
+            <div class="location-details">
+              <p>India,</p>
+              <p>Andhra Pradesh,</p>
+              <p>Tirupati.</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-    <div class="section-container">
-      <div class="contact-content">
-        <div class="contact-info">
-          <div class="contact-brand">
-            <div class="brand-symbol">@</div>
-            <h2 class="contact-title">LET\"S CONNECT</h2>
-          </div>
-
-          <div class="contact-details">
-            <div class="contact-item">
-              <div class="contact-icon">
-                <!-- <i class="fas fa-phone"></i> -->
-                 <img src="phone.png" alt="phone-symbol" class="phone-img">
-              </div>
-              <div class="contact-text">
-                <a href="tel:+919398927019">+91 9398927019</a>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <!-- <i class="fas fa-envelope"></i> -->
-                 <img src="mail.png" alt="mail-symbol" class="mail-img">
-              </div>
-              <div class="contact-text">
-                <a href="mailto:patnamprudvinath2006@gmail.com">patnamprudvinath2006@gmail.com</a>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <!-- <i class="fab fa-whatsapp"></i> -->
-                 <img src="whatsapp.png" alt="whats-app-symbol" class="whatsapp-img">
-              </div>
-              <div class="contact-text">
-                <a href="https://wa.me/9398927019?text=Hi%20I%20just%20visited%20your%20portfolio">Chat with me</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="location-info">
-          <h3 class="location-title">LOCATION</h3>
-          <div class="location-details">
-            <p>India,</p>
-            <p>Andhra Pradesh,</p>
-            <p>Tirupati.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <script src="script.js"></script>
 </body>
